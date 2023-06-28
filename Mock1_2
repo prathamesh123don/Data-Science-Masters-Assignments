@@ -1,0 +1,91 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/prathamesh123don/Data-Science-Masters-Assignments/blob/main/Mock1_2\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Sure, I can help you with that. Here is the Python code to solve this problem:"
+      ],
+      "metadata": {
+        "id": "h1esEpR9dLdO"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def first_unique_character(s):\n",
+        "  \"\"\"\n",
+        "  Finds the first non-repeating character in a string and returns its index.\n",
+        "\n",
+        "  Args:\n",
+        "    s: The string to be searched.\n",
+        "\n",
+        "  Returns:\n",
+        "    The index of the first non-repeating character, or -1 if it does not exist.\n",
+        "  \"\"\"\n",
+        "\n",
+        "  char_counts = {}\n",
+        "  for i, char in enumerate(s):\n",
+        "    if char not in char_counts:\n",
+        "      char_counts[char] = 0\n",
+        "    char_counts[char] += 1\n",
+        "\n",
+        "  for i, char in enumerate(s):\n",
+        "    if char_counts[char] == 1:\n",
+        "      return i\n",
+        "\n",
+        "  return -1\n",
+        "\n",
+        "\n",
+        "def main():\n",
+        "  s = \"leetcode\"\n",
+        "  print(first_unique_character(s))\n",
+        "\n",
+        "\n",
+        "if __name__ == \"__main__\":\n",
+        "  main()"
+      ],
+      "outputs": [],
+      "execution_count": null,
+      "metadata": {
+        "id": "Z95hR__hdLdT"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "This code works by first creating a dictionary to store the frequency of each character in the string. Then, it iterates through the string, and returns the index of the first character that has a frequency of 1. If no such character exists, then the function returns -1.\n",
+        "\n",
+        "The time complexity of this algorithm is O(n), where n is the length of the string. This is because we need to iterate through the entire string once to count the frequency of each character.\n",
+        "\n",
+        "The space complexity of this algorithm is O(1), because we are only using a constant amount of additional space to store the frequency of each character.\n",
+        "\n",
+        "I hope this helps! Let me know if you have any other questions."
+      ],
+      "metadata": {
+        "id": "rwoDOcVwdLdW"
+      }
+    }
+  ],
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "display_name": "Python 3",
+      "name": "python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 0
+}
